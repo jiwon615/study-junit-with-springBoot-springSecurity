@@ -11,3 +11,18 @@
 * Spring Data JPA
 * DevTools
 * Validation
+
+
+### Jpa LocalDateTime 자동으로 생성하는 법
+
+- @EnableJpaAuditing (Main 클래스)
+- @EntityListeners(AuditingListener.class) (Entity 클래스)
+```
+  @CreatedDate // inert
+  @Column(nullable = false)
+  private String createdAt;
+
+  @LastModifiedDate // insert, update
+  @Column(nullable = false)
+  private String updatedAt;
+````
